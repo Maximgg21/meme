@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+    --animate-appear: appear 5s ease-in 3s forwards;
+
+    @keyframes appear {
+        100% {opacity: 1}
+    }
+}
