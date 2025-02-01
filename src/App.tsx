@@ -1,7 +1,7 @@
 import {useState} from "react"
 
 function App() {
-  const [preview, setPreview] = useState<string | null>(null);
+  const [preview, setPreview] = useState<string | undefined>(undefined);
   const [show, setShow] = useState(false);
   const [imageNotChosen, setImageNotChosen] = useState(false);
   const [redColor, setRedColor] = useState("hsl(0, 100%, 90%)")
@@ -30,7 +30,7 @@ function App() {
       };
       reader.readAsDataURL(selectedFile);
     } else {
-      setPreview(null);
+      setPreview(undefined);
     }
   };
 
