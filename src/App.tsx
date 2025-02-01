@@ -60,11 +60,11 @@ function App() {
   return (
     <div className="min-h-full py-10 flex flex-col items-center" style={{backgroundColor: redColor}}>
       <div className="flex flex-col items-start">
-        <div className={`text-red-800 ${sosal ? "text-5xl tracking-[30px]" : "text-2xl"}`}>{sosal ? "Сосал?" : "Выбери свою фотку:"}</div>
-        {!sosal ? <input className="py-3 file:py-3 file:px-4 file:rounded-full file:bg-amber-100 file:mr-4 " onChange={handleFileChange} type="file" accept="image/png, image/jpeg" /> : ""}
-        {!sosal ? <button className="text-2xl bg-fuchsia-600 py-3 px-5 rounded-full" onClick={startPerfomace}>Начать представление!!!</button> : ""}
+        <div className={`${sosal ? "text-5xl tracking-[30px] pl-7 text-red-900" : "text-2xl text-[#2C0B0B]"}`}>{sosal ? "Сосал?" : "Выбери свою фотографию :"}</div>
+        {!sosal ? <input className="py-3 file:py-3 file:px-4 file:rounded-full file:bg-[#41C227] file:mr-4 " onChange={handleFileChange} type="file" accept="image/png, image/jpeg" /> : ""}
+        {!sosal ? <button className="text-2xl bg-fuchsia-900 py-3 px-5 rounded-full" onClick={startPerfomace}>Начать представление!!!</button> : ""}
       </div>
-      {imageNotChosen && <div className="text-2xl text-red-800">Фотку сначала выбери!!!</div>}
+      {imageNotChosen && <div className="text-2xl text-[#2C0B0B]">Фотку сначала выбери 🤡</div>}
       {show && 
       <div className="mt-5 relative w-[338px] h-[601px]">
         <img className="absolute animate-[spin_0.8s_linear_5]" src={preview}/>
