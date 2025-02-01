@@ -1,7 +1,7 @@
 import {useState} from "react"
 
 function App() {
-  const [preview, setPreview] = useState();
+  const [preview, setPreview] = useState<string | null>(null);
   const [show, setShow] = useState(false);
   const [imageNotChosen, setImageNotChosen] = useState(false);
   const [redColor, setRedColor] = useState("hsl(0, 100%, 90%)")
@@ -20,13 +20,13 @@ function App() {
     }, 100)
   }
 
-  function handleFileChange(e) {
-    const selectedFile = e.target.files[0];
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const selectedFile = e.target.files ? e.target.files[0] : null;
 
     if (selectedFile && selectedFile.type.startsWith('image/')) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPreview(reader.result);
+        setPreview(reader.result as string);
       };
       reader.readAsDataURL(selectedFile);
     } else {
